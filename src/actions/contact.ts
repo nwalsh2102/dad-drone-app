@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import prisma from "@/lib/db";
 
 const ContactFormSchema = z.object({
   email: z
@@ -24,7 +25,20 @@ export async function contact(actionState: any, formData: FormData) {
     name: formData.get("name") as string,
     email: formData.get("email") as string,
     message: formData.get("message") as string,
+    success: "Thank you for contacting us",
   });
+
+  async function createResponse() {
+    await prisma.contactResponses.create({
+      data: {
+        name: formData.get("name") as string,
+        email: formData.get("email") as string,
+        message: formData.get("message") as string,
+      },
+    });
+
+    console.log("NEW RESPONSE CREATED");
+  }
 
   if (!validatedFields.success) {
     return {
@@ -35,5 +49,5 @@ export async function contact(actionState: any, formData: FormData) {
     };
   }
 
-  console.log(validatedFields);
+  createResponse();
 }

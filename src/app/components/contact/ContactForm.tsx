@@ -131,6 +131,9 @@ export default function ContactForm() {
               >
                 {isPending ? "Submitting..." : "Submit"}
               </button>
+              {/* <p className="text-green-400 mt-4">
+                Thank you for contacting us.
+              </p> */}
             </div>
           </form>
         </div>
