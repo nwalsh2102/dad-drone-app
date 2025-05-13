@@ -1,6 +1,6 @@
 import Navbar from "../app/components/Navbar";
 import HomeHero from "./components/home/HomeHero";
-import { TextLeft } from "./components/home/TextLeft";
+import { TextLeft, TextRight } from "./components/home/SideTexts";
 import PhotoGrid from "./components/home/PhotoGrid";
 
 export default function () {
@@ -17,6 +17,8 @@ export default function () {
       <HomeHero />
       <TextLeft
         section="black"
+        colorT="white"
+        colorP="text-gray-100"
         title="Featured Photos"
         body="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur mollitia aliquid perferendis ratione facere labore sequi, non debitis molestias sit. Odio ea veritatis facilis beatae quod incidunt rem ad nostrum?"
         link="/photos"

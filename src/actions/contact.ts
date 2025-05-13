@@ -29,9 +29,11 @@ export async function contact(actionState: any, formData: FormData) {
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
+      message: formData.get("message") as string,
       name: formData.get("name") as string,
       email: formData.get("email") as string,
-      message: formData.get("message") as string,
     };
   }
+
+  console.log(validatedFields);
 }

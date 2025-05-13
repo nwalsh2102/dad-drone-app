@@ -37,6 +37,7 @@ function ContactInput({
           id={name}
           name={name}
           placeholder={placeholder}
+          defaultValue={defValue}
           //   required
           className={`
             ${baseClasses}

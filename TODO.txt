@@ -1,0 +1,31 @@
+TODOS:
+
+- Setup database w/ Prisma
+- Finish contact form
+    - Submissions get entered into database
+    - Once database is updated, a message is returned saying success --> message gets displayed onto client
+- Create an admin route to go to following pages:
+    - admin/dashboard - shows site analytics
+    - admin/posts - shows all posts; create & edit posts
+    - admin/blog - show all blogs; create & edit blogs
+    - admin/contact - shows all contact Submissions
+        - admin/contact/settings - can create auto reply emails, or notifications when form is submitted
+    - admin/settings - allows for site wide settings and admin settings such as dark mode, account password, etc.
+    - admin/request - Form to submit a website update request
+        - have all requests go to my admin dashboard (this will be a dashboard to manage all sites created)
+- Finish frontend:
+    - Make site responsive
+    - Finish following pages:
+        - /about
+            - Shows all about Bill Walsh
+        - /blog
+            - Showcases all blog posts made
+            - /blog/[blog-id] - shows more detailed version of blog post
+        - /photos
+            - Showcases all photos posted by Bill in a grid format
+            - /photos/[photo-id] - shows detailed version of photo
+                - purchase opportunity?
+    - Update home page
+        - Give better sections (wider and more styled)
+        - Make more responsive
+    - Add a footer?
