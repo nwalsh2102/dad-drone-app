@@ -10,7 +10,7 @@ export default function ContactTableHeader() {
 
   return (
     <>
-      <div className="flex items-center gap-[40em] w-2/3 mx-auto bg-white p-4 mt-10 mb-0">
+      <div className="flex items-center gap-[35em] w-2/3 mx-auto bg-white p-4 mt-10 mb-0">
         <div className="text-3xl text-black">
           <h1 className="font-bold">Contact Responses</h1>
         </div>

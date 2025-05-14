@@ -135,10 +135,17 @@ export default function ContactForm() {
               >
                 {isPending ? "Submitting..." : "Submit"}
               </button>
-              {/* <p className="text-green-400 mt-4">
-                Thank you for contacting us.
-              </p> */}
+              {state?.success && (
+                <p className="text-green-400 mt-4">
+                  Thank you for contacting us.
+                </p>
+              )}
             </div>
+            {/* <div className="">
+              {state?.success && (
+                <p className="text-green-400">Thank you for contacting us.</p>
+              )}
+            </div> */}
           </form>
         </div>
       </section>

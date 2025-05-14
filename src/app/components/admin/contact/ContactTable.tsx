@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { contactTableDelete } from "@/actions/contactTable";
 import prisma from "@/lib/db";
+import { DeleteResponse } from "./DeleteButton";
 
 export default async function ContactTable() {
   const responses = await prisma.contactResponses.findMany();
@@ -36,16 +37,15 @@ export default async function ContactTable() {
                   EDIT
                 </td>
                 <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer">
-                  <form action={contactTableDelete}>
-                    <input type="hidden" name="id" value={response.id} />
-                    <button type="submit">DEL</button>
-                  </form>
+                  <DeleteResponse id={response.id} />
                 </td>
               </tr>
             ))}
           </tbody>
-          <p className="text-black">{count}</p>
         </table>
+        <div>
+          <p className="text-black mt-3">Total Responses: {count}</p>
+        </div>
       </div>
     </div>
   );
