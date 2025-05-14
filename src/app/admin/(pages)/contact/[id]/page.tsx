@@ -6,12 +6,12 @@ import { ParsedUrlQuery } from "querystring";
 //   params,
 // }: {
 //   params: {
-//     id: number;
+//     id: string;
 //   };
 // }) {
-//   const id = await prisma.contactResponses.findUnique({
+//   const response = await prisma.contactResponses.findUnique({
 //     where: {
-//       id: params.id,
+//       id: Number(params.id),
 //     },
 //   });
 
@@ -19,21 +19,34 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: { [key: string]: string | string[] };
-  searchParams: { [key: string]: string | string[] };
+  // ← both params & searchParams are async
+  params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | string[]>>;
 }) {
-  const rawId = Array.isArray(params.id) ? params.id[0] : params.id;
+  // 1) await to get the real params object
+  const { id: rawId } = await params;
+
+  // 2) parse your id into a number
   const responseId = parseInt(rawId, 10);
   if (isNaN(responseId)) {
-    return <p className="p-4 text-red-500">Invalid ID: {rawId}</p>;
+    return (
+      <p className="p-4 text-red-500">
+        Invalid ID: <code>{rawId}</code>
+      </p>
+    );
   }
 
+  // 3) now Prisma will happily accept a Number
   const contactResponse = await prisma.contactResponses.findUnique({
     where: { id: responseId },
   });
 
   if (!contactResponse) {
-    return <p className="p-4 text-gray-700">No response found.</p>;
+    return (
+      <p className="p-4 text-gray-700">
+        No response found for ID {responseId}.
+      </p>
+    );
   }
 
   return (
@@ -44,6 +57,12 @@ export default async function Page({
           <div className="w-[80%]">
             <h1 className="bg-black text-lg font-bold p-2 mb-3">
               ID: {contactResponse?.id}
+              <br />
+              NAME: {contactResponse?.name}
+              <br />
+              EMAIL: {contactResponse?.email}
+              <br />
+              CREATED: {contactResponse?.createdAt.toString()}
             </h1>
             <div className="bg-black p-4">
               <h2 className="bg-white m-1 mb-0 p-1 text-black font-bold">

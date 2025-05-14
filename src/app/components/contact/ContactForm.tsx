@@ -102,7 +102,7 @@ export default function ContactForm() {
           </div>
           <form
             action={action}
-            method="POST"
+            // method="POST"
             className="grid grid-cols-2 gap-6"
           >
             <div>
