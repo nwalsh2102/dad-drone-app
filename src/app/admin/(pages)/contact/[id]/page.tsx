@@ -10,7 +10,7 @@ export default async function Page({
 }) {
   const id = await prisma.contactResponses.findUnique({
     where: {
-      id: Number(params.id),
+      id: params.id,
     },
   });
 
