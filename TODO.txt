@@ -1,10 +1,10 @@
 TODOS:
 
-- Setup database w/ Prisma
-- Finish contact form
+- Setup database w/ Prisma - DONE
+- Finish contact form - DONE
     - Submissions get entered into database
     - Once database is updated, a message is returned saying success --> message gets displayed onto client
-- Create an admin route to go to following pages:
+- Create an admin route to go to following pages: - CREATED ROUTES
     - admin/dashboard - shows site analytics
     - admin/posts - shows all posts; create & edit posts
     - admin/blog - show all blogs; create & edit blogs

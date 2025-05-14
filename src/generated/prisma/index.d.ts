@@ -19,10 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type contactResponses = $Result.DefaultSelection<Prisma.$contactResponsesPayload>
 /**
- * Model test
+ * Model photos
  * 
  */
-export type test = $Result.DefaultSelection<Prisma.$testPayload>
+export type photos = $Result.DefaultSelection<Prisma.$photosPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -160,14 +160,14 @@ export class PrismaClient<
   get contactResponses(): Prisma.contactResponsesDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.test`: Exposes CRUD operations for the **test** model.
+   * `prisma.photos`: Exposes CRUD operations for the **photos** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Tests
-    * const tests = await prisma.test.findMany()
+    * // Fetch zero or more Photos
+    * const photos = await prisma.photos.findMany()
     * ```
     */
-  get test(): Prisma.testDelegate<ExtArgs, ClientOptions>;
+  get photos(): Prisma.photosDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -609,7 +609,7 @@ export namespace Prisma {
 
   export const ModelName: {
     contactResponses: 'contactResponses',
-    test: 'test'
+    photos: 'photos'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -628,7 +628,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "contactResponses" | "test"
+      modelProps: "contactResponses" | "photos"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -706,77 +706,77 @@ export namespace Prisma {
           }
         }
       }
-      test: {
-        payload: Prisma.$testPayload<ExtArgs>
-        fields: Prisma.testFieldRefs
+      photos: {
+        payload: Prisma.$photosPayload<ExtArgs>
+        fields: Prisma.photosFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.testFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload> | null
+            args: Prisma.photosFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.testFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>
+            args: Prisma.photosFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>
           }
           findFirst: {
-            args: Prisma.testFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload> | null
+            args: Prisma.photosFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.testFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>
+            args: Prisma.photosFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>
           }
           findMany: {
-            args: Prisma.testFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>[]
+            args: Prisma.photosFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>[]
           }
           create: {
-            args: Prisma.testCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>
+            args: Prisma.photosCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>
           }
           createMany: {
-            args: Prisma.testCreateManyArgs<ExtArgs>
+            args: Prisma.photosCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.testCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>[]
+            args: Prisma.photosCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>[]
           }
           delete: {
-            args: Prisma.testDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>
+            args: Prisma.photosDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>
           }
           update: {
-            args: Prisma.testUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>
+            args: Prisma.photosUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>
           }
           deleteMany: {
-            args: Prisma.testDeleteManyArgs<ExtArgs>
+            args: Prisma.photosDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.testUpdateManyArgs<ExtArgs>
+            args: Prisma.photosUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.testUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>[]
+            args: Prisma.photosUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>[]
           }
           upsert: {
-            args: Prisma.testUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$testPayload>
+            args: Prisma.photosUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$photosPayload>
           }
           aggregate: {
-            args: Prisma.TestAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateTest>
+            args: Prisma.PhotosAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePhotos>
           }
           groupBy: {
-            args: Prisma.testGroupByArgs<ExtArgs>
-            result: $Utils.Optional<TestGroupByOutputType>[]
+            args: Prisma.photosGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PhotosGroupByOutputType>[]
           }
           count: {
-            args: Prisma.testCountArgs<ExtArgs>
-            result: $Utils.Optional<TestCountAggregateOutputType> | number
+            args: Prisma.photosCountArgs<ExtArgs>
+            result: $Utils.Optional<PhotosCountAggregateOutputType> | number
           }
         }
       }
@@ -865,7 +865,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     contactResponses?: contactResponsesOmit
-    test?: testOmit
+    photos?: photosOmit
   }
 
   /* Types for Logging */
@@ -1990,346 +1990,394 @@ export namespace Prisma {
 
 
   /**
-   * Model test
+   * Model photos
    */
 
-  export type AggregateTest = {
-    _count: TestCountAggregateOutputType | null
-    _avg: TestAvgAggregateOutputType | null
-    _sum: TestSumAggregateOutputType | null
-    _min: TestMinAggregateOutputType | null
-    _max: TestMaxAggregateOutputType | null
+  export type AggregatePhotos = {
+    _count: PhotosCountAggregateOutputType | null
+    _avg: PhotosAvgAggregateOutputType | null
+    _sum: PhotosSumAggregateOutputType | null
+    _min: PhotosMinAggregateOutputType | null
+    _max: PhotosMaxAggregateOutputType | null
   }
 
-  export type TestAvgAggregateOutputType = {
+  export type PhotosAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type TestSumAggregateOutputType = {
+  export type PhotosSumAggregateOutputType = {
     id: number | null
   }
 
-  export type TestMinAggregateOutputType = {
+  export type PhotosMinAggregateOutputType = {
     id: number | null
-    name: string | null
+    photo: string | null
+    title: string | null
+    location: string | null
+    description: string | null
+    price: string | null
     createdAt: Date | null
   }
 
-  export type TestMaxAggregateOutputType = {
+  export type PhotosMaxAggregateOutputType = {
     id: number | null
-    name: string | null
+    photo: string | null
+    title: string | null
+    location: string | null
+    description: string | null
+    price: string | null
     createdAt: Date | null
   }
 
-  export type TestCountAggregateOutputType = {
+  export type PhotosCountAggregateOutputType = {
     id: number
-    name: number
+    photo: number
+    title: number
+    location: number
+    description: number
+    price: number
     createdAt: number
     _all: number
   }
 
 
-  export type TestAvgAggregateInputType = {
+  export type PhotosAvgAggregateInputType = {
     id?: true
   }
 
-  export type TestSumAggregateInputType = {
+  export type PhotosSumAggregateInputType = {
     id?: true
   }
 
-  export type TestMinAggregateInputType = {
+  export type PhotosMinAggregateInputType = {
     id?: true
-    name?: true
+    photo?: true
+    title?: true
+    location?: true
+    description?: true
+    price?: true
     createdAt?: true
   }
 
-  export type TestMaxAggregateInputType = {
+  export type PhotosMaxAggregateInputType = {
     id?: true
-    name?: true
+    photo?: true
+    title?: true
+    location?: true
+    description?: true
+    price?: true
     createdAt?: true
   }
 
-  export type TestCountAggregateInputType = {
+  export type PhotosCountAggregateInputType = {
     id?: true
-    name?: true
+    photo?: true
+    title?: true
+    location?: true
+    description?: true
+    price?: true
     createdAt?: true
     _all?: true
   }
 
-  export type TestAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PhotosAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which test to aggregate.
+     * Filter which photos to aggregate.
      */
-    where?: testWhereInput
+    where?: photosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tests to fetch.
+     * Determine the order of photos to fetch.
      */
-    orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[]
+    orderBy?: photosOrderByWithRelationInput | photosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: testWhereUniqueInput
+    cursor?: photosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tests from the position of the cursor.
+     * Take `±n` photos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tests.
+     * Skip the first `n` photos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned tests
+     * Count returned photos
     **/
-    _count?: true | TestCountAggregateInputType
+    _count?: true | PhotosCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: TestAvgAggregateInputType
+    _avg?: PhotosAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: TestSumAggregateInputType
+    _sum?: PhotosSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: TestMinAggregateInputType
+    _min?: PhotosMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: TestMaxAggregateInputType
+    _max?: PhotosMaxAggregateInputType
   }
 
-  export type GetTestAggregateType<T extends TestAggregateArgs> = {
-        [P in keyof T & keyof AggregateTest]: P extends '_count' | 'count'
+  export type GetPhotosAggregateType<T extends PhotosAggregateArgs> = {
+        [P in keyof T & keyof AggregatePhotos]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTest[P]>
-      : GetScalarType<T[P], AggregateTest[P]>
+        : GetScalarType<T[P], AggregatePhotos[P]>
+      : GetScalarType<T[P], AggregatePhotos[P]>
   }
 
 
 
 
-  export type testGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: testWhereInput
-    orderBy?: testOrderByWithAggregationInput | testOrderByWithAggregationInput[]
-    by: TestScalarFieldEnum[] | TestScalarFieldEnum
-    having?: testScalarWhereWithAggregatesInput
+  export type photosGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: photosWhereInput
+    orderBy?: photosOrderByWithAggregationInput | photosOrderByWithAggregationInput[]
+    by: PhotosScalarFieldEnum[] | PhotosScalarFieldEnum
+    having?: photosScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: TestCountAggregateInputType | true
-    _avg?: TestAvgAggregateInputType
-    _sum?: TestSumAggregateInputType
-    _min?: TestMinAggregateInputType
-    _max?: TestMaxAggregateInputType
+    _count?: PhotosCountAggregateInputType | true
+    _avg?: PhotosAvgAggregateInputType
+    _sum?: PhotosSumAggregateInputType
+    _min?: PhotosMinAggregateInputType
+    _max?: PhotosMaxAggregateInputType
   }
 
-  export type TestGroupByOutputType = {
+  export type PhotosGroupByOutputType = {
     id: number
-    name: string
+    photo: string
+    title: string
+    location: string
+    description: string
+    price: string | null
     createdAt: Date
-    _count: TestCountAggregateOutputType | null
-    _avg: TestAvgAggregateOutputType | null
-    _sum: TestSumAggregateOutputType | null
-    _min: TestMinAggregateOutputType | null
-    _max: TestMaxAggregateOutputType | null
+    _count: PhotosCountAggregateOutputType | null
+    _avg: PhotosAvgAggregateOutputType | null
+    _sum: PhotosSumAggregateOutputType | null
+    _min: PhotosMinAggregateOutputType | null
+    _max: PhotosMaxAggregateOutputType | null
   }
 
-  type GetTestGroupByPayload<T extends testGroupByArgs> = Prisma.PrismaPromise<
+  type GetPhotosGroupByPayload<T extends photosGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<TestGroupByOutputType, T['by']> &
+      PickEnumerable<PhotosGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof TestGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof PhotosGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], TestGroupByOutputType[P]>
-            : GetScalarType<T[P], TestGroupByOutputType[P]>
+              : GetScalarType<T[P], PhotosGroupByOutputType[P]>
+            : GetScalarType<T[P], PhotosGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type testSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type photosSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    photo?: boolean
+    title?: boolean
+    location?: boolean
+    description?: boolean
+    price?: boolean
     createdAt?: boolean
-  }, ExtArgs["result"]["test"]>
+  }, ExtArgs["result"]["photos"]>
 
-  export type testSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type photosSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    photo?: boolean
+    title?: boolean
+    location?: boolean
+    description?: boolean
+    price?: boolean
     createdAt?: boolean
-  }, ExtArgs["result"]["test"]>
+  }, ExtArgs["result"]["photos"]>
 
-  export type testSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type photosSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    photo?: boolean
+    title?: boolean
+    location?: boolean
+    description?: boolean
+    price?: boolean
     createdAt?: boolean
-  }, ExtArgs["result"]["test"]>
+  }, ExtArgs["result"]["photos"]>
 
-  export type testSelectScalar = {
+  export type photosSelectScalar = {
     id?: boolean
-    name?: boolean
+    photo?: boolean
+    title?: boolean
+    location?: boolean
+    description?: boolean
+    price?: boolean
     createdAt?: boolean
   }
 
-  export type testOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt", ExtArgs["result"]["test"]>
+  export type photosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "photo" | "title" | "location" | "description" | "price" | "createdAt", ExtArgs["result"]["photos"]>
 
-  export type $testPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "test"
+  export type $photosPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "photos"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      name: string
+      photo: string
+      title: string
+      location: string
+      description: string
+      price: string | null
       createdAt: Date
-    }, ExtArgs["result"]["test"]>
+    }, ExtArgs["result"]["photos"]>
     composites: {}
   }
 
-  type testGetPayload<S extends boolean | null | undefined | testDefaultArgs> = $Result.GetResult<Prisma.$testPayload, S>
+  type photosGetPayload<S extends boolean | null | undefined | photosDefaultArgs> = $Result.GetResult<Prisma.$photosPayload, S>
 
-  type testCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<testFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: TestCountAggregateInputType | true
+  type photosCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<photosFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PhotosCountAggregateInputType | true
     }
 
-  export interface testDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['test'], meta: { name: 'test' } }
+  export interface photosDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['photos'], meta: { name: 'photos' } }
     /**
-     * Find zero or one Test that matches the filter.
-     * @param {testFindUniqueArgs} args - Arguments to find a Test
+     * Find zero or one Photos that matches the filter.
+     * @param {photosFindUniqueArgs} args - Arguments to find a Photos
      * @example
-     * // Get one Test
-     * const test = await prisma.test.findUnique({
+     * // Get one Photos
+     * const photos = await prisma.photos.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends testFindUniqueArgs>(args: SelectSubset<T, testFindUniqueArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends photosFindUniqueArgs>(args: SelectSubset<T, photosFindUniqueArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Test that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Photos that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {testFindUniqueOrThrowArgs} args - Arguments to find a Test
+     * @param {photosFindUniqueOrThrowArgs} args - Arguments to find a Photos
      * @example
-     * // Get one Test
-     * const test = await prisma.test.findUniqueOrThrow({
+     * // Get one Photos
+     * const photos = await prisma.photos.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends testFindUniqueOrThrowArgs>(args: SelectSubset<T, testFindUniqueOrThrowArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends photosFindUniqueOrThrowArgs>(args: SelectSubset<T, photosFindUniqueOrThrowArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Test that matches the filter.
+     * Find the first Photos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {testFindFirstArgs} args - Arguments to find a Test
+     * @param {photosFindFirstArgs} args - Arguments to find a Photos
      * @example
-     * // Get one Test
-     * const test = await prisma.test.findFirst({
+     * // Get one Photos
+     * const photos = await prisma.photos.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends testFindFirstArgs>(args?: SelectSubset<T, testFindFirstArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends photosFindFirstArgs>(args?: SelectSubset<T, photosFindFirstArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Test that matches the filter or
+     * Find the first Photos that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {testFindFirstOrThrowArgs} args - Arguments to find a Test
+     * @param {photosFindFirstOrThrowArgs} args - Arguments to find a Photos
      * @example
-     * // Get one Test
-     * const test = await prisma.test.findFirstOrThrow({
+     * // Get one Photos
+     * const photos = await prisma.photos.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends testFindFirstOrThrowArgs>(args?: SelectSubset<T, testFindFirstOrThrowArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends photosFindFirstOrThrowArgs>(args?: SelectSubset<T, photosFindFirstOrThrowArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Tests that matches the filter.
+     * Find zero or more Photos that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {testFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {photosFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Tests
-     * const tests = await prisma.test.findMany()
+     * // Get all Photos
+     * const photos = await prisma.photos.findMany()
      * 
-     * // Get first 10 Tests
-     * const tests = await prisma.test.findMany({ take: 10 })
+     * // Get first 10 Photos
+     * const photos = await prisma.photos.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const testWithIdOnly = await prisma.test.findMany({ select: { id: true } })
+     * const photosWithIdOnly = await prisma.photos.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends testFindManyArgs>(args?: SelectSubset<T, testFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends photosFindManyArgs>(args?: SelectSubset<T, photosFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Test.
-     * @param {testCreateArgs} args - Arguments to create a Test.
+     * Create a Photos.
+     * @param {photosCreateArgs} args - Arguments to create a Photos.
      * @example
-     * // Create one Test
-     * const Test = await prisma.test.create({
+     * // Create one Photos
+     * const Photos = await prisma.photos.create({
      *   data: {
-     *     // ... data to create a Test
+     *     // ... data to create a Photos
      *   }
      * })
      * 
      */
-    create<T extends testCreateArgs>(args: SelectSubset<T, testCreateArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends photosCreateArgs>(args: SelectSubset<T, photosCreateArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Tests.
-     * @param {testCreateManyArgs} args - Arguments to create many Tests.
+     * Create many Photos.
+     * @param {photosCreateManyArgs} args - Arguments to create many Photos.
      * @example
-     * // Create many Tests
-     * const test = await prisma.test.createMany({
+     * // Create many Photos
+     * const photos = await prisma.photos.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends testCreateManyArgs>(args?: SelectSubset<T, testCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends photosCreateManyArgs>(args?: SelectSubset<T, photosCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Tests and returns the data saved in the database.
-     * @param {testCreateManyAndReturnArgs} args - Arguments to create many Tests.
+     * Create many Photos and returns the data saved in the database.
+     * @param {photosCreateManyAndReturnArgs} args - Arguments to create many Photos.
      * @example
-     * // Create many Tests
-     * const test = await prisma.test.createManyAndReturn({
+     * // Create many Photos
+     * const photos = await prisma.photos.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Tests and only return the `id`
-     * const testWithIdOnly = await prisma.test.createManyAndReturn({
+     * // Create many Photos and only return the `id`
+     * const photosWithIdOnly = await prisma.photos.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2339,28 +2387,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends testCreateManyAndReturnArgs>(args?: SelectSubset<T, testCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends photosCreateManyAndReturnArgs>(args?: SelectSubset<T, photosCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Test.
-     * @param {testDeleteArgs} args - Arguments to delete one Test.
+     * Delete a Photos.
+     * @param {photosDeleteArgs} args - Arguments to delete one Photos.
      * @example
-     * // Delete one Test
-     * const Test = await prisma.test.delete({
+     * // Delete one Photos
+     * const Photos = await prisma.photos.delete({
      *   where: {
-     *     // ... filter to delete one Test
+     *     // ... filter to delete one Photos
      *   }
      * })
      * 
      */
-    delete<T extends testDeleteArgs>(args: SelectSubset<T, testDeleteArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends photosDeleteArgs>(args: SelectSubset<T, photosDeleteArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Test.
-     * @param {testUpdateArgs} args - Arguments to update one Test.
+     * Update one Photos.
+     * @param {photosUpdateArgs} args - Arguments to update one Photos.
      * @example
-     * // Update one Test
-     * const test = await prisma.test.update({
+     * // Update one Photos
+     * const photos = await prisma.photos.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2370,30 +2418,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends testUpdateArgs>(args: SelectSubset<T, testUpdateArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends photosUpdateArgs>(args: SelectSubset<T, photosUpdateArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Tests.
-     * @param {testDeleteManyArgs} args - Arguments to filter Tests to delete.
+     * Delete zero or more Photos.
+     * @param {photosDeleteManyArgs} args - Arguments to filter Photos to delete.
      * @example
-     * // Delete a few Tests
-     * const { count } = await prisma.test.deleteMany({
+     * // Delete a few Photos
+     * const { count } = await prisma.photos.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends testDeleteManyArgs>(args?: SelectSubset<T, testDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends photosDeleteManyArgs>(args?: SelectSubset<T, photosDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Tests.
+     * Update zero or more Photos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {testUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {photosUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Tests
-     * const test = await prisma.test.updateMany({
+     * // Update many Photos
+     * const photos = await prisma.photos.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2403,14 +2451,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends testUpdateManyArgs>(args: SelectSubset<T, testUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends photosUpdateManyArgs>(args: SelectSubset<T, photosUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Tests and returns the data updated in the database.
-     * @param {testUpdateManyAndReturnArgs} args - Arguments to update many Tests.
+     * Update zero or more Photos and returns the data updated in the database.
+     * @param {photosUpdateManyAndReturnArgs} args - Arguments to update many Photos.
      * @example
-     * // Update many Tests
-     * const test = await prisma.test.updateManyAndReturn({
+     * // Update many Photos
+     * const photos = await prisma.photos.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2419,8 +2467,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Tests and only return the `id`
-     * const testWithIdOnly = await prisma.test.updateManyAndReturn({
+     * // Update zero or more Photos and only return the `id`
+     * const photosWithIdOnly = await prisma.photos.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2433,56 +2481,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends testUpdateManyAndReturnArgs>(args: SelectSubset<T, testUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends photosUpdateManyAndReturnArgs>(args: SelectSubset<T, photosUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Test.
-     * @param {testUpsertArgs} args - Arguments to update or create a Test.
+     * Create or update one Photos.
+     * @param {photosUpsertArgs} args - Arguments to update or create a Photos.
      * @example
-     * // Update or create a Test
-     * const test = await prisma.test.upsert({
+     * // Update or create a Photos
+     * const photos = await prisma.photos.upsert({
      *   create: {
-     *     // ... data to create a Test
+     *     // ... data to create a Photos
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Test we want to update
+     *     // ... the filter for the Photos we want to update
      *   }
      * })
      */
-    upsert<T extends testUpsertArgs>(args: SelectSubset<T, testUpsertArgs<ExtArgs>>): Prisma__testClient<$Result.GetResult<Prisma.$testPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends photosUpsertArgs>(args: SelectSubset<T, photosUpsertArgs<ExtArgs>>): Prisma__photosClient<$Result.GetResult<Prisma.$photosPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Tests.
+     * Count the number of Photos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {testCountArgs} args - Arguments to filter Tests to count.
+     * @param {photosCountArgs} args - Arguments to filter Photos to count.
      * @example
-     * // Count the number of Tests
-     * const count = await prisma.test.count({
+     * // Count the number of Photos
+     * const count = await prisma.photos.count({
      *   where: {
-     *     // ... the filter for the Tests we want to count
+     *     // ... the filter for the Photos we want to count
      *   }
      * })
     **/
-    count<T extends testCountArgs>(
-      args?: Subset<T, testCountArgs>,
+    count<T extends photosCountArgs>(
+      args?: Subset<T, photosCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], TestCountAggregateOutputType>
+          : GetScalarType<T['select'], PhotosCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Test.
+     * Allows you to perform aggregations operations on a Photos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TestAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {PhotosAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2502,13 +2550,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends TestAggregateArgs>(args: Subset<T, TestAggregateArgs>): Prisma.PrismaPromise<GetTestAggregateType<T>>
+    aggregate<T extends PhotosAggregateArgs>(args: Subset<T, PhotosAggregateArgs>): Prisma.PrismaPromise<GetPhotosAggregateType<T>>
 
     /**
-     * Group by Test.
+     * Group by Photos.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {testGroupByArgs} args - Group by arguments.
+     * @param {photosGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2523,14 +2571,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends testGroupByArgs,
+      T extends photosGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: testGroupByArgs['orderBy'] }
-        : { orderBy?: testGroupByArgs['orderBy'] },
+        ? { orderBy: photosGroupByArgs['orderBy'] }
+        : { orderBy?: photosGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2579,20 +2627,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, testGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTestGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, photosGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPhotosGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the test model
+   * Fields of the photos model
    */
-  readonly fields: testFieldRefs;
+  readonly fields: photosFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for test.
+   * The delegate class that acts as a "Promise-like" for photos.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__testClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__photosClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -2620,375 +2668,379 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the test model
+   * Fields of the photos model
    */
-  interface testFieldRefs {
-    readonly id: FieldRef<"test", 'Int'>
-    readonly name: FieldRef<"test", 'String'>
-    readonly createdAt: FieldRef<"test", 'DateTime'>
+  interface photosFieldRefs {
+    readonly id: FieldRef<"photos", 'Int'>
+    readonly photo: FieldRef<"photos", 'String'>
+    readonly title: FieldRef<"photos", 'String'>
+    readonly location: FieldRef<"photos", 'String'>
+    readonly description: FieldRef<"photos", 'String'>
+    readonly price: FieldRef<"photos", 'String'>
+    readonly createdAt: FieldRef<"photos", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * test findUnique
+   * photos findUnique
    */
-  export type testFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * Filter, which test to fetch.
+     * Filter, which photos to fetch.
      */
-    where: testWhereUniqueInput
+    where: photosWhereUniqueInput
   }
 
   /**
-   * test findUniqueOrThrow
+   * photos findUniqueOrThrow
    */
-  export type testFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * Filter, which test to fetch.
+     * Filter, which photos to fetch.
      */
-    where: testWhereUniqueInput
+    where: photosWhereUniqueInput
   }
 
   /**
-   * test findFirst
+   * photos findFirst
    */
-  export type testFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * Filter, which test to fetch.
+     * Filter, which photos to fetch.
      */
-    where?: testWhereInput
+    where?: photosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tests to fetch.
+     * Determine the order of photos to fetch.
      */
-    orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[]
+    orderBy?: photosOrderByWithRelationInput | photosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for tests.
+     * Sets the position for searching for photos.
      */
-    cursor?: testWhereUniqueInput
+    cursor?: photosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tests from the position of the cursor.
+     * Take `±n` photos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tests.
+     * Skip the first `n` photos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of tests.
+     * Filter by unique combinations of photos.
      */
-    distinct?: TestScalarFieldEnum | TestScalarFieldEnum[]
+    distinct?: PhotosScalarFieldEnum | PhotosScalarFieldEnum[]
   }
 
   /**
-   * test findFirstOrThrow
+   * photos findFirstOrThrow
    */
-  export type testFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * Filter, which test to fetch.
+     * Filter, which photos to fetch.
      */
-    where?: testWhereInput
+    where?: photosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tests to fetch.
+     * Determine the order of photos to fetch.
      */
-    orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[]
+    orderBy?: photosOrderByWithRelationInput | photosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for tests.
+     * Sets the position for searching for photos.
      */
-    cursor?: testWhereUniqueInput
+    cursor?: photosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tests from the position of the cursor.
+     * Take `±n` photos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tests.
+     * Skip the first `n` photos.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of tests.
+     * Filter by unique combinations of photos.
      */
-    distinct?: TestScalarFieldEnum | TestScalarFieldEnum[]
+    distinct?: PhotosScalarFieldEnum | PhotosScalarFieldEnum[]
   }
 
   /**
-   * test findMany
+   * photos findMany
    */
-  export type testFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * Filter, which tests to fetch.
+     * Filter, which photos to fetch.
      */
-    where?: testWhereInput
+    where?: photosWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of tests to fetch.
+     * Determine the order of photos to fetch.
      */
-    orderBy?: testOrderByWithRelationInput | testOrderByWithRelationInput[]
+    orderBy?: photosOrderByWithRelationInput | photosOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing tests.
+     * Sets the position for listing photos.
      */
-    cursor?: testWhereUniqueInput
+    cursor?: photosWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` tests from the position of the cursor.
+     * Take `±n` photos from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` tests.
+     * Skip the first `n` photos.
      */
     skip?: number
-    distinct?: TestScalarFieldEnum | TestScalarFieldEnum[]
+    distinct?: PhotosScalarFieldEnum | PhotosScalarFieldEnum[]
   }
 
   /**
-   * test create
+   * photos create
    */
-  export type testCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * The data needed to create a test.
+     * The data needed to create a photos.
      */
-    data: XOR<testCreateInput, testUncheckedCreateInput>
+    data: XOR<photosCreateInput, photosUncheckedCreateInput>
   }
 
   /**
-   * test createMany
+   * photos createMany
    */
-  export type testCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many tests.
+     * The data used to create many photos.
      */
-    data: testCreateManyInput | testCreateManyInput[]
+    data: photosCreateManyInput | photosCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * test createManyAndReturn
+   * photos createManyAndReturn
    */
-  export type testCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelectCreateManyAndReturn<ExtArgs> | null
+    select?: photosSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * The data used to create many tests.
+     * The data used to create many photos.
      */
-    data: testCreateManyInput | testCreateManyInput[]
+    data: photosCreateManyInput | photosCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * test update
+   * photos update
    */
-  export type testUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * The data needed to update a test.
+     * The data needed to update a photos.
      */
-    data: XOR<testUpdateInput, testUncheckedUpdateInput>
+    data: XOR<photosUpdateInput, photosUncheckedUpdateInput>
     /**
-     * Choose, which test to update.
+     * Choose, which photos to update.
      */
-    where: testWhereUniqueInput
+    where: photosWhereUniqueInput
   }
 
   /**
-   * test updateMany
+   * photos updateMany
    */
-  export type testUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update tests.
+     * The data used to update photos.
      */
-    data: XOR<testUpdateManyMutationInput, testUncheckedUpdateManyInput>
+    data: XOR<photosUpdateManyMutationInput, photosUncheckedUpdateManyInput>
     /**
-     * Filter which tests to update
+     * Filter which photos to update
      */
-    where?: testWhereInput
+    where?: photosWhereInput
     /**
-     * Limit how many tests to update.
+     * Limit how many photos to update.
      */
     limit?: number
   }
 
   /**
-   * test updateManyAndReturn
+   * photos updateManyAndReturn
    */
-  export type testUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: photosSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * The data used to update tests.
+     * The data used to update photos.
      */
-    data: XOR<testUpdateManyMutationInput, testUncheckedUpdateManyInput>
+    data: XOR<photosUpdateManyMutationInput, photosUncheckedUpdateManyInput>
     /**
-     * Filter which tests to update
+     * Filter which photos to update
      */
-    where?: testWhereInput
+    where?: photosWhereInput
     /**
-     * Limit how many tests to update.
+     * Limit how many photos to update.
      */
     limit?: number
   }
 
   /**
-   * test upsert
+   * photos upsert
    */
-  export type testUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * The filter to search for the test to update in case it exists.
+     * The filter to search for the photos to update in case it exists.
      */
-    where: testWhereUniqueInput
+    where: photosWhereUniqueInput
     /**
-     * In case the test found by the `where` argument doesn't exist, create a new test with this data.
+     * In case the photos found by the `where` argument doesn't exist, create a new photos with this data.
      */
-    create: XOR<testCreateInput, testUncheckedCreateInput>
+    create: XOR<photosCreateInput, photosUncheckedCreateInput>
     /**
-     * In case the test was found with the provided `where` argument, update it with this data.
+     * In case the photos was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<testUpdateInput, testUncheckedUpdateInput>
+    update: XOR<photosUpdateInput, photosUncheckedUpdateInput>
   }
 
   /**
-   * test delete
+   * photos delete
    */
-  export type testDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
     /**
-     * Filter which test to delete.
+     * Filter which photos to delete.
      */
-    where: testWhereUniqueInput
+    where: photosWhereUniqueInput
   }
 
   /**
-   * test deleteMany
+   * photos deleteMany
    */
-  export type testDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which tests to delete
+     * Filter which photos to delete
      */
-    where?: testWhereInput
+    where?: photosWhereInput
     /**
-     * Limit how many tests to delete.
+     * Limit how many photos to delete.
      */
     limit?: number
   }
 
   /**
-   * test without action
+   * photos without action
    */
-  export type testDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type photosDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the test
+     * Select specific fields to fetch from the photos
      */
-    select?: testSelect<ExtArgs> | null
+    select?: photosSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the test
+     * Omit specific fields from the photos
      */
-    omit?: testOmit<ExtArgs> | null
+    omit?: photosOmit<ExtArgs> | null
   }
 
 
@@ -3017,13 +3069,17 @@ export namespace Prisma {
   export type ContactResponsesScalarFieldEnum = (typeof ContactResponsesScalarFieldEnum)[keyof typeof ContactResponsesScalarFieldEnum]
 
 
-  export const TestScalarFieldEnum: {
+  export const PhotosScalarFieldEnum: {
     id: 'id',
-    name: 'name',
+    photo: 'photo',
+    title: 'title',
+    location: 'location',
+    description: 'description',
+    price: 'price',
     createdAt: 'createdAt'
   };
 
-  export type TestScalarFieldEnum = (typeof TestScalarFieldEnum)[keyof typeof TestScalarFieldEnum]
+  export type PhotosScalarFieldEnum = (typeof PhotosScalarFieldEnum)[keyof typeof PhotosScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3040,6 +3096,14 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -3160,48 +3224,68 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"contactResponses"> | Date | string
   }
 
-  export type testWhereInput = {
-    AND?: testWhereInput | testWhereInput[]
-    OR?: testWhereInput[]
-    NOT?: testWhereInput | testWhereInput[]
-    id?: IntFilter<"test"> | number
-    name?: StringFilter<"test"> | string
-    createdAt?: DateTimeFilter<"test"> | Date | string
+  export type photosWhereInput = {
+    AND?: photosWhereInput | photosWhereInput[]
+    OR?: photosWhereInput[]
+    NOT?: photosWhereInput | photosWhereInput[]
+    id?: IntFilter<"photos"> | number
+    photo?: StringFilter<"photos"> | string
+    title?: StringFilter<"photos"> | string
+    location?: StringFilter<"photos"> | string
+    description?: StringFilter<"photos"> | string
+    price?: StringNullableFilter<"photos"> | string | null
+    createdAt?: DateTimeFilter<"photos"> | Date | string
   }
 
-  export type testOrderByWithRelationInput = {
+  export type photosOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
+    photo?: SortOrder
+    title?: SortOrder
+    location?: SortOrder
+    description?: SortOrder
+    price?: SortOrderInput | SortOrder
     createdAt?: SortOrder
   }
 
-  export type testWhereUniqueInput = Prisma.AtLeast<{
+  export type photosWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: testWhereInput | testWhereInput[]
-    OR?: testWhereInput[]
-    NOT?: testWhereInput | testWhereInput[]
-    name?: StringFilter<"test"> | string
-    createdAt?: DateTimeFilter<"test"> | Date | string
+    AND?: photosWhereInput | photosWhereInput[]
+    OR?: photosWhereInput[]
+    NOT?: photosWhereInput | photosWhereInput[]
+    photo?: StringFilter<"photos"> | string
+    title?: StringFilter<"photos"> | string
+    location?: StringFilter<"photos"> | string
+    description?: StringFilter<"photos"> | string
+    price?: StringNullableFilter<"photos"> | string | null
+    createdAt?: DateTimeFilter<"photos"> | Date | string
   }, "id">
 
-  export type testOrderByWithAggregationInput = {
+  export type photosOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
+    photo?: SortOrder
+    title?: SortOrder
+    location?: SortOrder
+    description?: SortOrder
+    price?: SortOrderInput | SortOrder
     createdAt?: SortOrder
-    _count?: testCountOrderByAggregateInput
-    _avg?: testAvgOrderByAggregateInput
-    _max?: testMaxOrderByAggregateInput
-    _min?: testMinOrderByAggregateInput
-    _sum?: testSumOrderByAggregateInput
+    _count?: photosCountOrderByAggregateInput
+    _avg?: photosAvgOrderByAggregateInput
+    _max?: photosMaxOrderByAggregateInput
+    _min?: photosMinOrderByAggregateInput
+    _sum?: photosSumOrderByAggregateInput
   }
 
-  export type testScalarWhereWithAggregatesInput = {
-    AND?: testScalarWhereWithAggregatesInput | testScalarWhereWithAggregatesInput[]
-    OR?: testScalarWhereWithAggregatesInput[]
-    NOT?: testScalarWhereWithAggregatesInput | testScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"test"> | number
-    name?: StringWithAggregatesFilter<"test"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"test"> | Date | string
+  export type photosScalarWhereWithAggregatesInput = {
+    AND?: photosScalarWhereWithAggregatesInput | photosScalarWhereWithAggregatesInput[]
+    OR?: photosScalarWhereWithAggregatesInput[]
+    NOT?: photosScalarWhereWithAggregatesInput | photosScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"photos"> | number
+    photo?: StringWithAggregatesFilter<"photos"> | string
+    title?: StringWithAggregatesFilter<"photos"> | string
+    location?: StringWithAggregatesFilter<"photos"> | string
+    description?: StringWithAggregatesFilter<"photos"> | string
+    price?: StringNullableWithAggregatesFilter<"photos"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"photos"> | Date | string
   }
 
   export type contactResponsesCreateInput = {
@@ -3257,42 +3341,70 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type testCreateInput = {
-    name: string
+  export type photosCreateInput = {
+    photo: string
+    title: string
+    location: string
+    description: string
+    price?: string | null
     createdAt?: Date | string
   }
 
-  export type testUncheckedCreateInput = {
+  export type photosUncheckedCreateInput = {
     id?: number
-    name: string
+    photo: string
+    title: string
+    location: string
+    description: string
+    price?: string | null
     createdAt?: Date | string
   }
 
-  export type testUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
+  export type photosUpdateInput = {
+    photo?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type testUncheckedUpdateInput = {
+  export type photosUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    photo?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type testCreateManyInput = {
+  export type photosCreateManyInput = {
     id?: number
-    name: string
+    photo: string
+    title: string
+    location: string
+    description: string
+    price?: string | null
     createdAt?: Date | string
   }
 
-  export type testUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
+  export type photosUpdateManyMutationInput = {
+    photo?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type testUncheckedUpdateManyInput = {
+  export type photosUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    photo?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    price?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3413,30 +3525,80 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
-  export type testCountOrderByAggregateInput = {
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type photosCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    photo?: SortOrder
+    title?: SortOrder
+    location?: SortOrder
+    description?: SortOrder
+    price?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type testAvgOrderByAggregateInput = {
+  export type photosAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type testMaxOrderByAggregateInput = {
+  export type photosMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    photo?: SortOrder
+    title?: SortOrder
+    location?: SortOrder
+    description?: SortOrder
+    price?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type testMinOrderByAggregateInput = {
+  export type photosMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    photo?: SortOrder
+    title?: SortOrder
+    location?: SortOrder
+    description?: SortOrder
+    price?: SortOrder
     createdAt?: SortOrder
   }
 
-  export type testSumOrderByAggregateInput = {
+  export type photosSumOrderByAggregateInput = {
     id?: SortOrder
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -3453,6 +3615,10 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3547,6 +3713,48 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
 

@@ -4,13 +4,13 @@ import prisma from "@/lib/db";
 import { revalidatePath } from "next/cache";
 
 export async function contactTableDelete(formData: FormData) {
-  const id = Number(formData.get("id"));
+  const responseId = Number(formData.get("id"));
 
   await prisma.contactResponses.delete({
-    where: { id },
+    where: { id: responseId },
   });
 
   revalidatePath("/admin/contact");
 
-  console.log(`ID: ${id}. DELETED`);
+  console.log(`ID: ${responseId}. DELETED`);
 }
