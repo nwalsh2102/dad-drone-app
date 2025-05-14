@@ -3,6 +3,7 @@ import prisma from "@/lib/db";
 
 export default async function ContactTable() {
   const responses = await prisma.contactResponses.findMany();
+  const count = await prisma.contactResponses.count();
 
   return (
     <div className="w-2/3 mx-auto bg-white p-4 mt-0 mb-10">
@@ -41,6 +42,7 @@ export default async function ContactTable() {
               </tr>
             ))}
           </tbody>
+          <p className="text-black">{count}</p>
         </table>
       </div>
     </div>

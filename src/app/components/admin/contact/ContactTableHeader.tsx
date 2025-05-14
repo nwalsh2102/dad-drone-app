@@ -15,6 +15,9 @@ export default function ContactTableHeader() {
           <h1 className="font-bold">Contact Responses</h1>
         </div>
         <div className="flex gap-10 text-black">
+          <Link href="/contact" className={`px-2 py-1 hover:cursor-pointer`}>
+            Contact
+          </Link>
           <Link
             href="/admin/contact"
             className={`px-2 py-1 hover:cursor-pointer ${
