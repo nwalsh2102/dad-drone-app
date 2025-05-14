@@ -19,16 +19,15 @@ export default async function Page({
   params,
   searchParams,
 }: {
-  params: { id: string };
-  searchParams: ParsedUrlQuery;
+  params: { [key: string]: string | string[] };
+  searchParams: { [key: string]: string | string[] };
 }) {
-  // 1) turn the string into a number
-  const responseId = parseInt(params.id, 10);
+  const rawId = Array.isArray(params.id) ? params.id[0] : params.id;
+  const responseId = parseInt(rawId, 10);
   if (isNaN(responseId)) {
-    return <p className="p-4 text-red-500">Invalid ID: {params.id}</p>;
+    return <p className="p-4 text-red-500">Invalid ID: {rawId}</p>;
   }
 
-  // 2) now pass that number into Prisma
   const contactResponse = await prisma.contactResponses.findUnique({
     where: { id: responseId },
   });
