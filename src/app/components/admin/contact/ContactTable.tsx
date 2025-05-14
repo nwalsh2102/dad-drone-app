@@ -39,7 +39,7 @@ export default async function ContactTable() {
                 <td className="px-4 py-2 border">
                   {response.createdAt.toString()}
                 </td>
-                <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer">
+                <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer active:bg-red-600">
                   <EditResponse />
                 </td>
                 <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer">

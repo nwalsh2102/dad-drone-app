@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/actions/contact copy.ts.disabled",
-    "src/app/admin/(pages)/contact/[id]"
+    "src/app/admin/(pages)/contact/[id-name]"
   ],
   "exclude": ["node_modules"]
 }

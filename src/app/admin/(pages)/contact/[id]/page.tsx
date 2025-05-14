@@ -1,17 +1,18 @@
 import ContactTableHeader from "@/app/components/admin/contact/ContactTableHeader";
 import prisma from "@/lib/db";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+export default async function Page({ params }: { params: { id: string } }) {
+  // const id = await prisma.contactResponses.findUnique({
+  //   where: {
+  //     id: Number(params.id),
+  //   },
+  // });
 
-export default async function Page({ params }: PageProps) {
   const responseId = parseInt(params.id, 10);
   if (isNaN(responseId)) {
-    return <p className="p-4 text-red-500">Invalid ID</p>;
+    return <p className="p-4 text-red-500">Invalid ID: {params.id}</p>;
   }
+
   const contactResponse = await prisma.contactResponses.findUnique({
     where: {
       id: responseId,
