@@ -128,6 +128,12 @@ exports.Prisma.ContactResponsesScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.TestScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -140,7 +146,8 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  contactResponses: 'contactResponses'
+  contactResponses: 'contactResponses',
+  test: 'test'
 };
 
 /**

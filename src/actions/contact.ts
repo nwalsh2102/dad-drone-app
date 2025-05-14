@@ -20,34 +20,61 @@ const ContactFormSchema = z.object({
     .trim(),
 });
 
-export async function contact(actionState: any, formData: FormData) {
-  const validatedFields = ContactFormSchema.safeParse({
+// ME
+// export async function contact(actionState: any, formData: FormData) {
+//   const validatedFields = ContactFormSchema.safeParse({
+//     name: formData.get("name") as string,
+//     email: formData.get("email") as string,
+//     message: formData.get("message") as string,
+//   });
+
+//   // const parsed = ContactFormSchema.saf
+
+//   async function createResponse() {
+//     await prisma.contactResponses.create({
+//       data: {
+//         name: formData.get("name") as string,
+//         email: formData.get("email") as string,
+//         message: formData.get("message") as string,
+//       },
+//     });
+
+//     console.log("NEW RESPONSE CREATED");
+//   }
+
+//   if (!validatedFields.success) {
+//     return {
+//       errors: validatedFields.error.flatten().fieldErrors,
+//       message: formData.get("message") as string,
+//       name: formData.get("name") as string,
+//       email: formData.get("email") as string,
+//     };
+//   }
+
+//   createResponse();
+// }
+
+// GPT
+export async function contact(actionStae: any, formData: FormData) {
+  const data = {
     name: formData.get("name") as string,
     email: formData.get("email") as string,
     message: formData.get("message") as string,
-    success: "Thank you for contacting us",
-  });
+  };
+  const parsed = ContactFormSchema.safeParse(data);
 
-  async function createResponse() {
-    await prisma.contactResponses.create({
-      data: {
-        name: formData.get("name") as string,
-        email: formData.get("email") as string,
-        message: formData.get("message") as string,
-      },
-    });
-
-    console.log("NEW RESPONSE CREATED");
-  }
-
-  if (!validatedFields.success) {
+  if (!parsed.success) {
     return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: formData.get("message") as string,
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
+      errors: parsed.error.flatten().fieldErrors,
+      ...data,
     };
   }
 
-  createResponse();
+  await prisma.contactResponses.create({
+    data: parsed.data,
+  });
+
+  console.log("NEW RESPONSE CrEaTeD");
+
+  return { success: true };
 }
