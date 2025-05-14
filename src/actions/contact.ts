@@ -20,6 +20,16 @@ const ContactFormSchema = z.object({
     .trim(),
 });
 
+export type ContactActionResult =
+  | { success: true }
+  | {
+      success: false;
+      errors: Record<string, string[]>;
+      name: string;
+      email: string;
+      message: string;
+    };
+
 // ME
 // export async function contact(actionState: any, formData: FormData) {
 //   const validatedFields = ContactFormSchema.safeParse({
@@ -55,26 +65,27 @@ const ContactFormSchema = z.object({
 // }
 
 // GPT
-export async function contact(actionStae: any, formData: FormData) {
+export async function contact(state: any, formData: FormData) {
   const data = {
     name: formData.get("name") as string,
     email: formData.get("email") as string,
     message: formData.get("message") as string,
   };
+
   const parsed = ContactFormSchema.safeParse(data);
 
   if (!parsed.success) {
     return {
       errors: parsed.error.flatten().fieldErrors,
-      ...data,
+      message: formData.get("message") as string,
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
     };
   }
 
   await prisma.contactResponses.create({
     data: parsed.data,
   });
-
-  console.log("NEW RESPONSE CrEaTeD");
 
   return { success: true };
 }
