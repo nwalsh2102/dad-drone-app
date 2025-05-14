@@ -10,6 +10,7 @@ export default async function BasicPhoto() {
       {photos.map((photo) => (
         <li key={photo.id}>{photo.title}</li>
       ))}
+      <p>TEST</p>
     </ul>
   );
 }

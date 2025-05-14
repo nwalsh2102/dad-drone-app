@@ -173,7 +173,7 @@ const config = {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgres://neondb_owner:npg_RbyBg5KGdke6@ep-flat-hall-a4ztqj4e-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require"
+        "value": "postgresql://doadmin:AVNS_oOUmXZstiBmTnZnjb62@drone-d-vero-do-user-22399514-0.h.db.ondigitalocean.com:25060/drone-app?sslmode=require"
       }
     }
   },
