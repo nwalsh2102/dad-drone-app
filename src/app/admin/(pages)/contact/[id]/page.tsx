@@ -1,23 +1,36 @@
 import ContactTableHeader from "@/app/components/admin/contact/ContactTableHeader";
 import prisma from "@/lib/db";
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page(
+  { params }: { params: { id: string } } // ← inline type for params.id
+) {
+  // parse the string into a number for Prisma
+  const responseId = parseInt(params.id, 10);
+  if (isNaN(responseId)) {
+    return (
+      <p className="p-4 text-red-500">
+        Invalid ID: <code>{params.id}</code>
+      </p>
+    );
+  }
+
+  // fetch your record
+  const contactResponse = await prisma.contactResponses.findUnique({
+    where: { id: responseId },
+  });
+
+  if (!contactResponse) {
+    return (
+      <p className="p-4 text-gray-700">
+        No response found for ID {responseId}.
+      </p>
+    );
+  }
   // const id = await prisma.contactResponses.findUnique({
   //   where: {
   //     id: Number(params.id),
   //   },
   // });
-
-  const responseId = parseInt(params.id, 10);
-  if (isNaN(responseId)) {
-    return <p className="p-4 text-red-500">Invalid ID: {params.id}</p>;
-  }
-
-  const contactResponse = await prisma.contactResponses.findUnique({
-    where: {
-      id: responseId,
-    },
-  });
 
   return (
     <>
