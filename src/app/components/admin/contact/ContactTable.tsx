@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 import { contactTableDelete } from "@/actions/contactTable";
 import prisma from "@/lib/db";
 import { DeleteResponse } from "./DeleteButton";
+import Link from "next/link";
 
 export default async function ContactTable() {
   const responses = await prisma.contactResponses.findMany();
@@ -29,7 +30,11 @@ export default async function ContactTable() {
                 <td className="px-4 py-2 border">{response.id}</td>
                 <td className="px-4 py-2 border">{response.name}</td>
                 <td className="px-4 py-2 border">{response.email}</td>
-                <td className="px-4 py-2 border">{response.message}</td>
+                <td className="px-4 py-2 border hover:cursor-pointer">
+                  <Link href={`/admin/contact/${response.id}`}>
+                    {response.message}
+                  </Link>
+                </td>
                 <td className="px-4 py-2 border">
                   {response.createdAt.toString()}
                 </td>

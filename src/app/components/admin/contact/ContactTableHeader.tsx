@@ -7,6 +7,7 @@ export default function ContactTableHeader() {
   const pathname = usePathname();
 
   const _responses = pathname === "/admin/contact";
+  const _settings = pathname === "/admin/contact/settings";
 
   return (
     <>
@@ -29,7 +30,7 @@ export default function ContactTableHeader() {
           <Link
             href="/admin/contact/settings"
             className={`px-2 py-1 hover:cursor-pointer ${
-              _responses ? "" : "bg-black text-white"
+              _settings ? "bg-black text-white" : ""
             }`}
           >
             Settings

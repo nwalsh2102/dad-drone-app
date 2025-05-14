@@ -59,7 +59,7 @@ export function DeleteResponse({ id }: { id: number }) {
   return (
     <form
       action={contactTableDelete}
-      method="post"
+      method="POST"
       className="inline hover:cursor-pointer"
     >
       <input type="hidden" name="id" value={id} />

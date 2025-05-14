@@ -1,7 +1,7 @@
 "use client";
 
 import { contact } from "@/actions/contact";
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 
 interface CInputProps {
   type: string;
@@ -80,6 +80,15 @@ function ContactInput({
 export default function ContactForm() {
   const [state, action, isPending] = useActionState(contact, undefined);
 
+  const [showSuccess, setShowSuccess] = useState(false);
+  useEffect(() => {
+    if (state?.success) {
+      setShowSuccess(true);
+      const t = setTimeout(() => setShowSuccess(false), 3000);
+      return () => clearTimeout(t);
+    }
+  }, [state?.success]);
+
   return (
     <div className="min-h-screen flex items-center justify-center select-none">
       <section className="w-300 h-150 max-w-2xl mx-auto bg-transparent py-12 border-0">
@@ -135,7 +144,12 @@ export default function ContactForm() {
               >
                 {isPending ? "Submitting..." : "Submit"}
               </button>
-              {state?.success && (
+              {/* {state?.success && (
+                <p className="text-green-400 mt-4">
+                  Thank you for contacting us.
+                </p>
+              )} */}
+              {showSuccess && (
                 <p className="text-green-400 mt-4">
                   Thank you for contacting us.
                 </p>
