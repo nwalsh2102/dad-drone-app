@@ -5,12 +5,12 @@ export default async function Page({
   params,
 }: {
   params: {
-    id: Number;
+    id: number;
   };
 }) {
   const id = await prisma.contactResponses.findUnique({
     where: {
-      id: Number(params.id),
+      id: params.id,
     },
   });
 
