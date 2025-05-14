@@ -1,5 +1,6 @@
 import ContactTableHeader from "@/app/components/admin/contact/ContactTableHeader";
 import prisma from "@/lib/db";
+import { ParsedUrlQuery } from "querystring";
 
 // export default async function Page({
 //   params,
@@ -14,7 +15,13 @@ import prisma from "@/lib/db";
 //     },
 //   });
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: { id: string };
+  searchParams: ParsedUrlQuery;
+}) {
   // 1) turn the string into a number
   const responseId = parseInt(params.id, 10);
   if (isNaN(responseId)) {
