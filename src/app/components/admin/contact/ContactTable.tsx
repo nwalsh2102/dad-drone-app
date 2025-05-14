@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 import { contactTableDelete } from "@/actions/contactTable";
 import prisma from "@/lib/db";
 import { DeleteResponse } from "./DeleteButton";
+import EditResponse from "./EditResponse";
 import Link from "next/link";
 
 export default async function ContactTable() {
@@ -39,7 +40,7 @@ export default async function ContactTable() {
                   {response.createdAt.toString()}
                 </td>
                 <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer">
-                  EDIT
+                  <EditResponse />
                 </td>
                 <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer">
                   <DeleteResponse id={response.id} />

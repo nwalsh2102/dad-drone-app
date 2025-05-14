@@ -66,7 +66,7 @@ export function DeleteResponse({ id }: { id: number }) {
       <button
         type="submit"
         disabled={pending}
-        className={`px-2 py-1 rounded text-white transition ${
+        className={`px-2 py-1 rounded text-white transition cursor-pointer active:bg-green-600 ${
           pending
             ? "bg-gray-400 cursor-not-allowed"
             : "bg-red-600 hover:bg-red-700"
