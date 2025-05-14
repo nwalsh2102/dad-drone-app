@@ -1,9 +1,11 @@
-export default function AdminContact() {
+import ContactTableHeader from "@/app/components/admin/contact/ContactTableHeader";
+import ContactTable from "@/app/components/admin/contact/ContactTable";
+
+export default function Page() {
   return (
-    <section>
-      <div>
-        <h1>ADMIN CONTACT</h1>
-      </div>
-    </section>
+    <>
+      <ContactTableHeader />
+      <ContactTable />
+    </>
   );
 }
