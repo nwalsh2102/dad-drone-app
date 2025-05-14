@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { contactTableDelete } from "@/actions/contactTable";
 import prisma from "@/lib/db";
 
