@@ -9,7 +9,16 @@ import Link from "next/link";
 export default async function ContactTable() {
   const responses = await prisma.contactResponses.findMany();
   const count = await prisma.contactResponses.count();
-
+  if (count === 0) {
+    return (
+      <div className="w-2/3 mx-auto bg-white p-4 mt-0 mb-10">
+        <h1 className="text-red-500 text-2xl">NO RESPONSES FOUND</h1>
+        <p className="text-red-500">
+          Please wait for a response, or create one.
+        </p>
+      </div>
+    );
+  }
   return (
     <div className="w-2/3 mx-auto bg-white p-4 mt-0 mb-10">
       <div>
@@ -21,7 +30,7 @@ export default async function ContactTable() {
               <th className="px-4 py-2 border">Email</th>
               <th className="px-4 py-2 border">Message</th>
               <th className="px-4 py-2 border">Created</th>
-              <th className="px-4 py-2 border">Edit</th>
+              <th className="px-4 py-2 border bg-neutral-500">Edit</th>
               <th className="px-4 py-2 border">Del</th>
             </tr>
           </thead>
@@ -39,11 +48,11 @@ export default async function ContactTable() {
                 <td className="px-4 py-2 border">
                   {response.createdAt.toString()}
                 </td>
-                <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer active:bg-red-600">
-                  <EditResponse />
+                <td className="px-4 py-2 border bg-neutral-500 hover:bg-neutral-500 active:bg-red-600">
+                  <EditResponse width="full" />
                 </td>
                 <td className="px-4 py-2 border hover:bg-neutral-600 hover:cursor-pointer">
-                  <DeleteResponse id={response.id} />
+                  <DeleteResponse width="full" id={response.id} />
                 </td>
               </tr>
             ))}

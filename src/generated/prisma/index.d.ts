@@ -226,8 +226,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.7.0
-   * Query Engine version: 3cff47a7f5d65c3ea74883f1d736e41d68ce91ed
+   * Prisma Client JS version: 6.8.1
+   * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
    */
   export type PrismaVersion = {
     client: string
@@ -982,6 +982,7 @@ export namespace Prisma {
 
   export type ContactResponsesMinAggregateOutputType = {
     id: number | null
+    slugId: string | null
     name: string | null
     email: string | null
     message: string | null
@@ -990,6 +991,7 @@ export namespace Prisma {
 
   export type ContactResponsesMaxAggregateOutputType = {
     id: number | null
+    slugId: string | null
     name: string | null
     email: string | null
     message: string | null
@@ -998,6 +1000,7 @@ export namespace Prisma {
 
   export type ContactResponsesCountAggregateOutputType = {
     id: number
+    slugId: number
     name: number
     email: number
     message: number
@@ -1016,6 +1019,7 @@ export namespace Prisma {
 
   export type ContactResponsesMinAggregateInputType = {
     id?: true
+    slugId?: true
     name?: true
     email?: true
     message?: true
@@ -1024,6 +1028,7 @@ export namespace Prisma {
 
   export type ContactResponsesMaxAggregateInputType = {
     id?: true
+    slugId?: true
     name?: true
     email?: true
     message?: true
@@ -1032,6 +1037,7 @@ export namespace Prisma {
 
   export type ContactResponsesCountAggregateInputType = {
     id?: true
+    slugId?: true
     name?: true
     email?: true
     message?: true
@@ -1127,6 +1133,7 @@ export namespace Prisma {
 
   export type ContactResponsesGroupByOutputType = {
     id: number
+    slugId: string
     name: string
     email: string
     message: string
@@ -1154,6 +1161,7 @@ export namespace Prisma {
 
   export type contactResponsesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slugId?: boolean
     name?: boolean
     email?: boolean
     message?: boolean
@@ -1162,6 +1170,7 @@ export namespace Prisma {
 
   export type contactResponsesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slugId?: boolean
     name?: boolean
     email?: boolean
     message?: boolean
@@ -1170,6 +1179,7 @@ export namespace Prisma {
 
   export type contactResponsesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    slugId?: boolean
     name?: boolean
     email?: boolean
     message?: boolean
@@ -1178,19 +1188,21 @@ export namespace Prisma {
 
   export type contactResponsesSelectScalar = {
     id?: boolean
+    slugId?: boolean
     name?: boolean
     email?: boolean
     message?: boolean
     createdAt?: boolean
   }
 
-  export type contactResponsesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "message" | "createdAt", ExtArgs["result"]["contactResponses"]>
+  export type contactResponsesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slugId" | "name" | "email" | "message" | "createdAt", ExtArgs["result"]["contactResponses"]>
 
   export type $contactResponsesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "contactResponses"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      slugId: string
       name: string
       email: string
       message: string
@@ -1619,6 +1631,7 @@ export namespace Prisma {
    */
   interface contactResponsesFieldRefs {
     readonly id: FieldRef<"contactResponses", 'Int'>
+    readonly slugId: FieldRef<"contactResponses", 'String'>
     readonly name: FieldRef<"contactResponses", 'String'>
     readonly email: FieldRef<"contactResponses", 'String'>
     readonly message: FieldRef<"contactResponses", 'String'>
@@ -2013,9 +2026,11 @@ export namespace Prisma {
     id: number | null
     photo: string | null
     title: string | null
+    boat: string | null
     location: string | null
     description: string | null
     price: string | null
+    published: boolean | null
     createdAt: Date | null
   }
 
@@ -2023,9 +2038,11 @@ export namespace Prisma {
     id: number | null
     photo: string | null
     title: string | null
+    boat: string | null
     location: string | null
     description: string | null
     price: string | null
+    published: boolean | null
     createdAt: Date | null
   }
 
@@ -2033,9 +2050,11 @@ export namespace Prisma {
     id: number
     photo: number
     title: number
+    boat: number
     location: number
     description: number
     price: number
+    published: number
     createdAt: number
     _all: number
   }
@@ -2053,9 +2072,11 @@ export namespace Prisma {
     id?: true
     photo?: true
     title?: true
+    boat?: true
     location?: true
     description?: true
     price?: true
+    published?: true
     createdAt?: true
   }
 
@@ -2063,9 +2084,11 @@ export namespace Prisma {
     id?: true
     photo?: true
     title?: true
+    boat?: true
     location?: true
     description?: true
     price?: true
+    published?: true
     createdAt?: true
   }
 
@@ -2073,9 +2096,11 @@ export namespace Prisma {
     id?: true
     photo?: true
     title?: true
+    boat?: true
     location?: true
     description?: true
     price?: true
+    published?: true
     createdAt?: true
     _all?: true
   }
@@ -2170,9 +2195,11 @@ export namespace Prisma {
     id: number
     photo: string
     title: string
+    boat: string
     location: string
     description: string
     price: string | null
+    published: boolean | null
     createdAt: Date
     _count: PhotosCountAggregateOutputType | null
     _avg: PhotosAvgAggregateOutputType | null
@@ -2199,9 +2226,11 @@ export namespace Prisma {
     id?: boolean
     photo?: boolean
     title?: boolean
+    boat?: boolean
     location?: boolean
     description?: boolean
     price?: boolean
+    published?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["photos"]>
 
@@ -2209,9 +2238,11 @@ export namespace Prisma {
     id?: boolean
     photo?: boolean
     title?: boolean
+    boat?: boolean
     location?: boolean
     description?: boolean
     price?: boolean
+    published?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["photos"]>
 
@@ -2219,9 +2250,11 @@ export namespace Prisma {
     id?: boolean
     photo?: boolean
     title?: boolean
+    boat?: boolean
     location?: boolean
     description?: boolean
     price?: boolean
+    published?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["photos"]>
 
@@ -2229,13 +2262,15 @@ export namespace Prisma {
     id?: boolean
     photo?: boolean
     title?: boolean
+    boat?: boolean
     location?: boolean
     description?: boolean
     price?: boolean
+    published?: boolean
     createdAt?: boolean
   }
 
-  export type photosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "photo" | "title" | "location" | "description" | "price" | "createdAt", ExtArgs["result"]["photos"]>
+  export type photosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "photo" | "title" | "boat" | "location" | "description" | "price" | "published" | "createdAt", ExtArgs["result"]["photos"]>
 
   export type $photosPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "photos"
@@ -2244,9 +2279,11 @@ export namespace Prisma {
       id: number
       photo: string
       title: string
+      boat: string
       location: string
       description: string
       price: string | null
+      published: boolean | null
       createdAt: Date
     }, ExtArgs["result"]["photos"]>
     composites: {}
@@ -2674,9 +2711,11 @@ export namespace Prisma {
     readonly id: FieldRef<"photos", 'Int'>
     readonly photo: FieldRef<"photos", 'String'>
     readonly title: FieldRef<"photos", 'String'>
+    readonly boat: FieldRef<"photos", 'String'>
     readonly location: FieldRef<"photos", 'String'>
     readonly description: FieldRef<"photos", 'String'>
     readonly price: FieldRef<"photos", 'String'>
+    readonly published: FieldRef<"photos", 'Boolean'>
     readonly createdAt: FieldRef<"photos", 'DateTime'>
   }
     
@@ -3060,6 +3099,7 @@ export namespace Prisma {
 
   export const ContactResponsesScalarFieldEnum: {
     id: 'id',
+    slugId: 'slugId',
     name: 'name',
     email: 'email',
     message: 'message',
@@ -3073,9 +3113,11 @@ export namespace Prisma {
     id: 'id',
     photo: 'photo',
     title: 'title',
+    boat: 'boat',
     location: 'location',
     description: 'description',
     price: 'price',
+    published: 'published',
     createdAt: 'createdAt'
   };
 
@@ -3154,6 +3196,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -3175,6 +3224,7 @@ export namespace Prisma {
     OR?: contactResponsesWhereInput[]
     NOT?: contactResponsesWhereInput | contactResponsesWhereInput[]
     id?: IntFilter<"contactResponses"> | number
+    slugId?: StringFilter<"contactResponses"> | string
     name?: StringFilter<"contactResponses"> | string
     email?: StringFilter<"contactResponses"> | string
     message?: StringFilter<"contactResponses"> | string
@@ -3183,6 +3233,7 @@ export namespace Prisma {
 
   export type contactResponsesOrderByWithRelationInput = {
     id?: SortOrder
+    slugId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     message?: SortOrder
@@ -3194,6 +3245,7 @@ export namespace Prisma {
     AND?: contactResponsesWhereInput | contactResponsesWhereInput[]
     OR?: contactResponsesWhereInput[]
     NOT?: contactResponsesWhereInput | contactResponsesWhereInput[]
+    slugId?: StringFilter<"contactResponses"> | string
     name?: StringFilter<"contactResponses"> | string
     email?: StringFilter<"contactResponses"> | string
     message?: StringFilter<"contactResponses"> | string
@@ -3202,6 +3254,7 @@ export namespace Prisma {
 
   export type contactResponsesOrderByWithAggregationInput = {
     id?: SortOrder
+    slugId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     message?: SortOrder
@@ -3218,6 +3271,7 @@ export namespace Prisma {
     OR?: contactResponsesScalarWhereWithAggregatesInput[]
     NOT?: contactResponsesScalarWhereWithAggregatesInput | contactResponsesScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"contactResponses"> | number
+    slugId?: StringWithAggregatesFilter<"contactResponses"> | string
     name?: StringWithAggregatesFilter<"contactResponses"> | string
     email?: StringWithAggregatesFilter<"contactResponses"> | string
     message?: StringWithAggregatesFilter<"contactResponses"> | string
@@ -3231,9 +3285,11 @@ export namespace Prisma {
     id?: IntFilter<"photos"> | number
     photo?: StringFilter<"photos"> | string
     title?: StringFilter<"photos"> | string
+    boat?: StringFilter<"photos"> | string
     location?: StringFilter<"photos"> | string
     description?: StringFilter<"photos"> | string
     price?: StringNullableFilter<"photos"> | string | null
+    published?: BoolNullableFilter<"photos"> | boolean | null
     createdAt?: DateTimeFilter<"photos"> | Date | string
   }
 
@@ -3241,9 +3297,11 @@ export namespace Prisma {
     id?: SortOrder
     photo?: SortOrder
     title?: SortOrder
+    boat?: SortOrder
     location?: SortOrder
     description?: SortOrder
     price?: SortOrderInput | SortOrder
+    published?: SortOrderInput | SortOrder
     createdAt?: SortOrder
   }
 
@@ -3254,9 +3312,11 @@ export namespace Prisma {
     NOT?: photosWhereInput | photosWhereInput[]
     photo?: StringFilter<"photos"> | string
     title?: StringFilter<"photos"> | string
+    boat?: StringFilter<"photos"> | string
     location?: StringFilter<"photos"> | string
     description?: StringFilter<"photos"> | string
     price?: StringNullableFilter<"photos"> | string | null
+    published?: BoolNullableFilter<"photos"> | boolean | null
     createdAt?: DateTimeFilter<"photos"> | Date | string
   }, "id">
 
@@ -3264,9 +3324,11 @@ export namespace Prisma {
     id?: SortOrder
     photo?: SortOrder
     title?: SortOrder
+    boat?: SortOrder
     location?: SortOrder
     description?: SortOrder
     price?: SortOrderInput | SortOrder
+    published?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: photosCountOrderByAggregateInput
     _avg?: photosAvgOrderByAggregateInput
@@ -3282,13 +3344,16 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"photos"> | number
     photo?: StringWithAggregatesFilter<"photos"> | string
     title?: StringWithAggregatesFilter<"photos"> | string
+    boat?: StringWithAggregatesFilter<"photos"> | string
     location?: StringWithAggregatesFilter<"photos"> | string
     description?: StringWithAggregatesFilter<"photos"> | string
     price?: StringNullableWithAggregatesFilter<"photos"> | string | null
+    published?: BoolNullableWithAggregatesFilter<"photos"> | boolean | null
     createdAt?: DateTimeWithAggregatesFilter<"photos"> | Date | string
   }
 
   export type contactResponsesCreateInput = {
+    slugId?: string
     name: string
     email: string
     message: string
@@ -3297,6 +3362,7 @@ export namespace Prisma {
 
   export type contactResponsesUncheckedCreateInput = {
     id?: number
+    slugId?: string
     name: string
     email: string
     message: string
@@ -3304,6 +3370,7 @@ export namespace Prisma {
   }
 
   export type contactResponsesUpdateInput = {
+    slugId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -3312,6 +3379,7 @@ export namespace Prisma {
 
   export type contactResponsesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    slugId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -3320,6 +3388,7 @@ export namespace Prisma {
 
   export type contactResponsesCreateManyInput = {
     id?: number
+    slugId?: string
     name: string
     email: string
     message: string
@@ -3327,6 +3396,7 @@ export namespace Prisma {
   }
 
   export type contactResponsesUpdateManyMutationInput = {
+    slugId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -3335,6 +3405,7 @@ export namespace Prisma {
 
   export type contactResponsesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    slugId?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     message?: StringFieldUpdateOperationsInput | string
@@ -3344,9 +3415,11 @@ export namespace Prisma {
   export type photosCreateInput = {
     photo: string
     title: string
+    boat: string
     location: string
     description: string
     price?: string | null
+    published?: boolean | null
     createdAt?: Date | string
   }
 
@@ -3354,18 +3427,22 @@ export namespace Prisma {
     id?: number
     photo: string
     title: string
+    boat: string
     location: string
     description: string
     price?: string | null
+    published?: boolean | null
     createdAt?: Date | string
   }
 
   export type photosUpdateInput = {
     photo?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    boat?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: NullableStringFieldUpdateOperationsInput | string | null
+    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3373,9 +3450,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     photo?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    boat?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: NullableStringFieldUpdateOperationsInput | string | null
+    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3383,18 +3462,22 @@ export namespace Prisma {
     id?: number
     photo: string
     title: string
+    boat: string
     location: string
     description: string
     price?: string | null
+    published?: boolean | null
     createdAt?: Date | string
   }
 
   export type photosUpdateManyMutationInput = {
     photo?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    boat?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: NullableStringFieldUpdateOperationsInput | string | null
+    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3402,9 +3485,11 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     photo?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
+    boat?: StringFieldUpdateOperationsInput | string
     location?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     price?: NullableStringFieldUpdateOperationsInput | string | null
+    published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -3447,6 +3532,7 @@ export namespace Prisma {
 
   export type contactResponsesCountOrderByAggregateInput = {
     id?: SortOrder
+    slugId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     message?: SortOrder
@@ -3459,6 +3545,7 @@ export namespace Prisma {
 
   export type contactResponsesMaxOrderByAggregateInput = {
     id?: SortOrder
+    slugId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     message?: SortOrder
@@ -3467,6 +3554,7 @@ export namespace Prisma {
 
   export type contactResponsesMinOrderByAggregateInput = {
     id?: SortOrder
+    slugId?: SortOrder
     name?: SortOrder
     email?: SortOrder
     message?: SortOrder
@@ -3540,6 +3628,11 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -3549,9 +3642,11 @@ export namespace Prisma {
     id?: SortOrder
     photo?: SortOrder
     title?: SortOrder
+    boat?: SortOrder
     location?: SortOrder
     description?: SortOrder
     price?: SortOrder
+    published?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -3563,9 +3658,11 @@ export namespace Prisma {
     id?: SortOrder
     photo?: SortOrder
     title?: SortOrder
+    boat?: SortOrder
     location?: SortOrder
     description?: SortOrder
     price?: SortOrder
+    published?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -3573,9 +3670,11 @@ export namespace Prisma {
     id?: SortOrder
     photo?: SortOrder
     title?: SortOrder
+    boat?: SortOrder
     location?: SortOrder
     description?: SortOrder
     price?: SortOrder
+    published?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -3601,6 +3700,14 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -3619,6 +3726,10 @@ export namespace Prisma {
 
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3729,6 +3840,11 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -3755,6 +3871,14 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
 

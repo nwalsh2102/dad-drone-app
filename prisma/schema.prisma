@@ -13,6 +13,7 @@ datasource db {
 
 model contactResponses {
   id        Int      @id @default(autoincrement())
+  slugId    String   @default(cuid())
   name      String
   email     String
   message   String
@@ -23,8 +24,10 @@ model photos {
   id          Int      @id @default(autoincrement())
   photo       String
   title       String
+  boat        String
   location    String
   description String
   price       String?
+  published   Boolean? @default(false)
   createdAt   DateTime @default(now())
 }

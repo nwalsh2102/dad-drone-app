@@ -1,33 +1,15 @@
-// "use client";
-
-// import { useFormStatus } from "react-dom";
-
-// export function DeleteButton(
-//   props: React.ButtonHTMLAttributes<HTMLButtonElement>
-// ) {
-//   const { pending } = useFormStatus();
-
-//   return (
-//     <button
-//       {...props}
-//       disabled={pending || props.disabled}
-//       className={[
-//         props.className,
-//         pending ? "opacity-50 cursor-not-allowed" : "",
-//       ]
-//         .filter(Boolean)
-//         .join(" ")}
-//     />
-//   );
-// }
-
 "use client";
 
 import { useFormStatus } from "react-dom";
 import { contactTableDelete } from "@/actions/contactTable";
 import { useEffect, useRef, useState } from "react";
 
-export function DeleteResponse({ id }: { id: number }) {
+interface DeleteResponseProps {
+  id: number;
+  width: string;
+}
+
+export function DeleteResponse({ id, width }: DeleteResponseProps) {
   const { pending } = useFormStatus();
   const prevPending = useRef(false);
   const [justDeleted, setJustDeleted] = useState(false);
@@ -55,24 +37,24 @@ export function DeleteResponse({ id }: { id: number }) {
     );
   }
 
+  const defaultWidth = "";
+
   // Otherwise show delete button
   return (
-    <form
-      action={contactTableDelete}
-      method="POST"
-      className="inline hover:cursor-pointer"
-    >
+    <form action={contactTableDelete} className="inline hover:cursor-pointer">
       <input type="hidden" name="id" value={id} />
       <button
         type="submit"
         disabled={pending}
-        className={`px-2 py-1 rounded text-white transition cursor-pointer active:bg-green-600 ${
+        className={`px-2 py-1 text-white w-${
+          width ?? defaultWidth
+        } transition cursor-pointer active:bg-green-600 ${
           pending
             ? "bg-gray-400 cursor-not-allowed"
             : "bg-red-600 hover:bg-red-700"
         }`}
       >
-        {pending ? "Deleting…" : "Delete"}
+        {pending ? "Deleting…" : "DELETE"}
       </button>
     </form>
   );
