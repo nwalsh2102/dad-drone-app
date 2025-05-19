@@ -22,6 +22,7 @@ export default function Navbar({ title }: { title: string }) {
         { href: "/photos", label: "PHOTOS" },
         { href: "/blog", label: "BLOG" },
         { href: "/contact", label: "CONTACT" },
+        // { href: "/vero-learn-more", label: "VERO" },
       ].map(({ href, label }) => {
         const active = isActive(href);
         return (

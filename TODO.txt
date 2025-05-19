@@ -28,4 +28,5 @@ TODOS:
     - Update home page
         - Give better sections (wider and more styled)
         - Make more responsive
+        - Make featured photos section have photos get bigger?
     - Add a footer?

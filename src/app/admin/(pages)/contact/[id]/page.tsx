@@ -75,10 +75,10 @@ export default async function Page({
               CREATED: {contactResponse?.createdAt.toString()}
             </h1>
             <div className="bg-black p-4">
-              <h2 className="bg-white m-1 mb-0 p-1 text-black font-bold">
+              <h2 className="bg-white m-2 mb-0 p-1 text-black font-bold">
                 Message:
               </h2>
-              <p className="bg-white m-1 mt-0 p-1 text-black">
+              <p className="bg-white m-2 mt-0 p-1 text-black">
                 {contactResponse?.message}
               </p>
             </div>
